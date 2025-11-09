@@ -42,11 +42,11 @@ describe('doStuffByTimeout', () => {
 });
 
 describe('doStuffByInterval', () => {
-  beforeAll(() => {
+  beforeEach(() => {
     jest.useFakeTimers();
   });
 
-  afterAll(() => {
+  afterEach(() => {
     jest.useRealTimers();
   });
 
@@ -55,8 +55,7 @@ describe('doStuffByInterval', () => {
 
     doStuffByInterval(fn, 100);
 
-    // expect(setInterval).toHaveBeenCalledTimes(1);
-    // expect(setInterval).toHaveBeenCalledWith(fn, 100);
+    
   });
 
   test('should call callback multiple times after multiple intervals', () => {
